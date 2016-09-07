@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>About page</title>
+        <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Content/icomoon-social.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="~/Content/leaflet.css" />
+        <link rel="stylesheet" href="~/Content/styleContact.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="~/Content/main.css">
+        <script src="~/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+
+<canvas id="myCanvas" width="300" height="250"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var imageObj = new Image();
+
+    imageObj.onload = function () {
+        context.drawImage(imageObj, 69, 50);
+    };
+    imageObj.src = 'http://streamlineinternetmarketing.com/wp-content/uploads/2015/05/about_image.jpg';
+</script>
+
+
+<p id="rData">
+</p>
+<p>
+    Enter you name @Html.TextBox("Name")
+    <input type="submit" id="SubmitName" value="Submit" />
+</p>
+
+
+
+@section Scripts{
+<script type="text/jscript">
+    $('#SubmitName').click(function () {
+        var url = "/Home/WelcomeMsg";
+        var name = $('#Name').val();
+        $.get(url, { input: name }, function (data) {
+            $("#rData").html(data);
+        });
+    })
+</script>
+}
+
+<div class="row">
+    <h2 dir="rtl"> קצת עלינו</h2>
+    <p dir="rtl">האתר שלנו משרת את המטייל הישראלי, לפני שסוגרים חופשה בחו"ל צריך לדאוג למלון טוב שיענה על הדרישות ויספק אותנו בחופשה הבאה</p>
+    <p dir="rtl">כמו כן, ישראלים רבים שומרי הכשרות לא יצטרכו לטרוח כ"כ בחיפוש אחר מסעדות כשרות בחו"ל, אצלנו באתר המסעדות הידועות והטובות מוגשות למטייל הישראלי</p>
+    <p dir="rtl">כל מה שעליכם לעשות הוא רק לחפש לפי היעד המבוקש בכל אחד מהאזורים באתר, כמו כן, אתם יכולים להירשם לאתר שלנו</p>
+    <p dir="rtl">לקבל מידע שוטף ולאחר הטיול שלכם, תוכלו להמליץ לאחרים ולתת ביקורת משלכם על המלון שהייתם או המסעדות שאכלתם בהם ולשתף אחרים</p>
+
+</div>
+ <!-- image of the web developers -->
+    <div class="section">
+        <div class="container">
+            <h2 dir="rtl">דבר העורכים</h2>
+            <div class="row">
+                <!-- start of image  -->
+                <div class="testimonial col-md-4 col-sm-6">
+                    <!-- Author Photo -->
+                    <div class="author-photo">
+                        <img src="~/img/roi.png" alt="Author 1" width="10" height="10">
+                    </div>
+                    <div class="testimonial-bubble">
+                        <blockquote>
+                            <!-- Quote -->
+                            <p class="quote" dir="rtl">
+                                "האתר ידידותי מאוד, המטרה היתה להקל על המטייל הישראלי בחיפושים אחרי מסעדות כשרות ומלונות ברמה גבוהה"
+                            </p>                       
+                        </blockquote>
+                        <cite class="author-info">
+                            ROI SIBONI
+                        </cite>
+                        <div class="sprite arrow-speech-bubble"></div>
+                    </div>
+                </div>
+                <div class="testimonial col-md-4 col-sm-6">
+                    <div class="author-photo">
+                        <img src="~/img/or1.png" alt="Author 2">
+                    </div>
+                    <div class="testimonial-bubble">
+                        <blockquote>
+                            <p class="quote" dir="rtl"> 
+                                "חשוב מאוד שכל מטייל יפיק את המירב מהחופשה שלו והבסיס לכל חופשה טובה זה נוחות ומיקום לינה נגיש לאזורים האטרקטיביים"
+                            </p>
+                           
+                        </blockquote>
+                        <cite class="author-info">
+                            OR TAL
+                        </cite>
+                        <div class="sprite arrow-speech-bubble"></div>
+                    </div>
+                </div>
+                <div class="testimonial col-md-4 col-sm-6">
+                    <div class="author-photo">
+                        <img src="~/img/rotem.png" alt="Author 3">
+                    </div>
+                    <div class="testimonial-bubble">
+                        <blockquote>
+                            <p class="quote" dir="rtl">
+                                "המטרה שהצבנו לעצמנו היתה לעשות לישראלי חיים קלים יותר בחיפוש אחרי מלון טוב, האתר יהיה יעיל יותר בהמשך עם ערכים נוספים שיקלו על תכנון הטיול "
+                            </p>
+                            <cite class="author-info">
+                                ROTEM MOR
+                            </cite>
+                        </blockquote>
+                        <div class="sprite arrow-speech-bubble"></div>
+                    </div>
+                </div>
+                <!-- End of image -->
+
+            </div>
+        </div>
+    </div>
+
+
+<footer>
+    <section>
+        <div id="about">
+         כל הזכויות שמורות למפתחי האתר - רועי סיבוני, אור טל ורותם מור   &copy;
+        </div>
+    </section>
+</footer>

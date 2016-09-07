@@ -1,0 +1,66 @@
+﻿@model proj1.Models.Rest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.restName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

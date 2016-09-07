@@ -1,0 +1,112 @@
+﻿@model proj1.Models.Rest
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Rest</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.restName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restName)
+                @Html.ValidationMessageFor(model => model.restName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restType)
+                @Html.ValidationMessageFor(model => model.restType)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restCity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restCity)
+                @Html.ValidationMessageFor(model => model.restCity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restAddress)
+                @Html.ValidationMessageFor(model => model.restAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restRating, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restRating)
+                @Html.ValidationMessageFor(model => model.restRating)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restPrice)
+                @Html.ValidationMessageFor(model => model.restPrice)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restKosher, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restKosher)
+                @Html.ValidationMessageFor(model => model.restKosher)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restInfo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.restInfo)
+                @Html.ValidationMessageFor(model => model.restInfo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.imgRest1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.imgRest1)
+                @Html.ValidationMessageFor(model => model.imgRest1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.imgRest2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.imgRest2)
+                @Html.ValidationMessageFor(model => model.imgRest2)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

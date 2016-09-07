@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <link rel="stylesheet" href="~/Content/styles.css">
+            <div class="navbar-header">       
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">                   
+                    <li>@Html.ActionLink("עמוד הבית", "Index", "Home")</li>
+                    <li class="tutorials sub">
+                        <a href="#">המומלצים שלנו</a>
+                        <ul>
+                            <li>@Html.ActionLink("מסעדות", "Index", "Rests")</li>
+                            <li>@Html.ActionLink("מלונות", "Index", "Hotels")</li>
+                           
+                        </ul>
+                    </li>
+                    <li class="tutorials sub">
+                        <a href="#">המומלצים שלכם</a>
+                        <ul>
+                            <li>@Html.ActionLink("מסעדות", "Index", "RecommendationRests")</li>
+                            <li>@Html.ActionLink("מלונות", "Index", "RecommendationHotels")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("אודות", "About", "Home")</li>          
+                </ul>                  
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!--script for clock-->
+    <script src="http://24timezones.com/js/swfobject.js" language="javascript"></script>
+    <script src="http://24timezones.com/timescript/cities2/maindata.js.php?city=136" language="javascript"></script>
+    <div id="flash_container_tt55afc39dabd71"></div>
+    <script type="text/javascript">
+        var flashMap = new SWFObject("http://24timezones.com/timescript/banner24.swf", "main", "135", "90", "7.0.22", "#FFFFFF", true)
+        flashMap.addParam("movie", "http://24timezones.com/timescript/banner24.swf");
+        flashMap.addParam("quality", "high");
+        flashMap.addParam("wmode", "transparent");
+        flashMap.addParam("flashvars", "color=0099FF&logo=1&dataPath=http://24timezones.com/timescript/cities.xml");
+        flashMap.write("flash_container_tt55afc39dabd71");
+    </script>
+    <br>
+    <br>
+
+    <div class="container body-content">   
+        @RenderBody()
+        <br />
+    </div>
+       
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@model proj1.Models.RecommendationHotel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DetaliesRec</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/blog-post.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/icomoon-social.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/leaflet.css" />
+    <link rel="stylesheet" href="~/Content/main.css">
+    <script src="~/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Page Content -->
+    <div class="container">       
+            <!-- Blog Post Content Column -->
+                <!-- Blog Post -->
+                <!-- Title -->
+                <h1>@Html.DisplayFor(model => model.hotel.hotelName)</h1>
+                <!-- Author -->
+                <p class="lead">                  
+                    <span class="glyphicon glyphicon-map-marker"></span> @Html.DisplayFor(model => model.hotel.hotelAddress)
+                </p>
+                <hr>
+                <!-- Date/Time -->
+                <div class="row">                                                   
+                    <span class="glyphicon glyphicon-user"></span>By  @Html.DisplayFor(model => model.recoName)
+                    &nbsp;   
+                    <span class="glyphicon glyphicon-th-large"></span>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-earphone"></span> @Html.DisplayFor(model => model.recoPhone) 
+                    &nbsp; 
+                    <span class="glyphicon glyphicon-th-large"></span>
+                    &nbsp;                  
+                    <span class="glyphicon glyphicon-thumbs-up"></span> הדירוג שלי  @Html.DisplayFor(model => model.recoRating)  
+                    &nbsp;
+                    <span class="glyphicon glyphicon-th-large"></span>
+                   
+                </div> 
+        </div>
+        <hr>
+        <div class="row">
+            <div>
+                <section class="notepaper col-sm-4 blog-sidebar">
+                    <figure class="quote">
+                        <blockquote class="curly-quotes">
+                            @Html.DisplayFor(model => model.recoInfo)
+                        </blockquote>
+                        <figcaption class="quote-by">by— @Html.DisplayFor(model => model.recoName)</figcaption>
+                    </figure>
+                </section>
+                <div class="col-ms-3">
+                    <!-- Post Content -->
+                    <img src="@Html.DisplayFor(model => model.hotel.imghotel1)" alt="Project Name" class="img-rounded">
+                </div>
+            </div>
+         </div>
+
+        <input type="button" class="btn btn-default btn-sm" value="חזור אחורה" onclick="location.href='@Url.Action("Index","RecommendationHotels")'" />  
+
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="~/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

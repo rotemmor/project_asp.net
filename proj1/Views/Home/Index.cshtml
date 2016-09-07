@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<img src="http://srv1.jpg.co.il/4/558421b8900ec.png" alt="כותרת 1">
+
+ <!-- aside in home page -->
+<aside>
+    <div class="col-md-4">
+        <div class="well">
+            <h4 dir="rtl">יש לך יעד לטיול? דאגנו לך למלון טוב-הכנס לאחת האופציות ורשום את יעד הטיול שלך</h4>
+            <hr />
+            <div class="row">
+                <div>
+                    <ul class="list-unstyled">
+                        <li>
+                          <b>@Html.ActionLink("צפה בהמלצות הגולשים על מאגר המסעדות", "Index", "RecommendationRests")</b>
+                        </li>
+                        <li>
+                            <b>@Html.ActionLink("צפה בהמלצות הגולשים על מאגר המלונות", "Index", "RecommendationHotels")</b>
+                        </li>                    
+                    </ul>
+                </div>               
+            </div>         
+        </div>
+        <!-- Side Widget Well -->
+        <div class="well">
+            <h4 dir="rtl">עושים לך פחות כאב ראש!</h4>
+            <p dir="rtl">הכי חשוב לישראלי שהמלון יהיה קרוב להכל, שבטיול שלו יהיה אוכל טוב בלי להיסחב עם "אוכל מהבית" ולהשאיר את המנה החמה בארון.</p>
+            <p dir="rtl">באתר שלנו קיבצנו עבור הישראלי המטייל את המלונות הנוחים והטובים ביותר ומסעדות במחיר סביר ,אוכל טוב והכי חשוב.. בטעם של בית</p>
+        </div>
+    </div>
+</aside>
+
+<!--video tag-->
+<video autoplay id="bgvid">
+    <source src="~/Content/A_Day_in_Barcelona.webm" type="video/webm">
+    <source src="~/Content/A_Day_in_Barcelona.mp4" type="video/mp4">
+</video>
+
+<!--box in home page-->
+<div id="polina">
+    <h1>-המלצת השבוע - טיול בברצלונה</h1>
+    <p>
+    <p>לפי סקר שנערך באתר עולה כי ישנה עליה באחוז המייטלים בברצלונה, ישראלים רבים מחפשים מלונות,מסעדות כשרות וכדומה</p>
+    <p>האתר שלנו עוזר לכם לקבל המלצות על המקומות הכי טובים בעולם כמובן לפי הצרכים של הישראלי היפה</p>
+    @Html.ActionLink("לחץ כאן וחפש לך מלון", "Index", "Hotels")
+    <button>עצור קליפ</button>
+</div>
+
+<!--script video-->
+<script>
+    var vid = document.getElementById("bgvid");
+    var pauseButton = document.querySelector("#polina button");
+
+    function vidFade() {
+        vid.classList.add("stopfade");
+    }
+
+    vid.addEventListener('ended', function () {
+        // only functional if "loop" is removed
+        vid.pause();
+        // to capture IE10
+        vidFade();
+    });
+
+
+    pauseButton.addEventListener("click", function () {
+        vid.classList.toggle("stopfade");
+        if (vid.paused) {
+            vid.play();
+            pauseButton.innerHTML = "Pause";
+        } else {
+            vid.pause();
+            pauseButton.innerHTML = "Paused";
+        }
+    })
+
+</script>
